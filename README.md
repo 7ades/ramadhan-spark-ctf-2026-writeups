@@ -168,7 +168,7 @@ gef➤  x/s 0x402038
 it's clear now , the win function spawns a shell with system("/bin/sh") so our goal here is to reach it .
 
 So we need to input 72 bytes and then the win function 
-But before starting to write our exploit we need some a gadget  which are instructions that end with ret.
+But before starting to write our exploit we need a gadget  which are instructions that end with ret.
 in this case we will only use ret to aligne our stack . We will use a tool named ropper it will give us all the gadgets in this binary . we will type ropper --f main 
 ```gdb
 ┌──(kali㉿kali)-[~/Desktop/ramadhan-ctf/1-ret2win/ret2win_handout]
