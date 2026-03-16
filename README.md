@@ -123,7 +123,7 @@ Dump of assembler code for function vuln:
 End of assembler dump.
 ```
 As we can see the vuln function is doing a very Dangerous thing in this part .
-it's reading a 0x40 size buffer (64 bytes) and storing it in a 0xc8 space (200 bytes) , so it doesn't stop us if we exceed 64 bytes of input . And that's how we will overwrite stuff in the stack , overwrite the rbp(base pointer) and take controle of the rip (instruction pointer) which points on the next instruction to be executed .
+it's reading a 0x40 size buffer (64 bytes) and storing it in a 0xc8 space (200 bytes) , so it doesn't stop us if we exceed 64 bytes of input . And that's how we will overwrite stuff in the stack , overwrite the rbp(base pointer) and take controle of the rip (instruction pointer) which points to the next instruction to be executed .
 ```gdb
    0x0000000000401281 <+28>:    lea    rax,[rbp-0x40]
    0x0000000000401285 <+32>:    mov    edx,0xc8
