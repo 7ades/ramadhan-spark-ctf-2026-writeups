@@ -72,7 +72,7 @@ gef➤
 i used gdb to debug the binary and typed info func to list all the functions and their addresses , we can see the functions we are intrested in (main , vuln , win ).
 
 now i will disassemble the main function using disass main
-```bash
+```gdb
 gef➤  disass main
 Dump of assembler code for function main:
    0x00000000004011fb <+0>:     push   rbp
@@ -102,7 +102,7 @@ Dump of assembler code for function main:
 End of assembler dump.
 ```
 as we can see it's calling vuln let's disassemble it using disass vuln
-```bash
+```gdb
 gef➤  disass vuln
 Dump of assembler code for function vuln:
    0x0000000000401265 <+0>:     push   rbp
@@ -124,7 +124,7 @@ End of assembler dump.
 ```
 As we can see the vuln function is doing a very Dangerous thing in the part .
 it's reading a 0x40 size buffer (64 bytes) and storing it in a 0xc8 space (200 bytes) , so it doesn't stop us if we exceed 64 bytes of input . And that's how we will overwrite stuff in the stack , overwrite the rbp(base pointer) and take controle of the rip (instruction pointer) which points on the next instruction to be executed .
-```bash
+```gdb
    0x0000000000401281 <+28>:    lea    rax,[rbp-0x40]
    0x0000000000401285 <+32>:    mov    edx,0xc8
    0x000000000040128a <+37>:    mov    rsi,rax
@@ -138,7 +138,7 @@ now we know that stack layout is somthing like this
 So we need 72 bytes (64+8) to reach the rip
 
 With that being sad , the win function looks interesting . Let's disassemble it using disass win 
-```bash
+```gdb
 gef➤  disass win
 Dump of assembler code for function win:
    0x00000000004011c7 <+0>:     push   rbp
@@ -158,7 +158,7 @@ Dump of assembler code for function win:
 End of assembler dump.
 ```
 As we can see it's calling system and passing to it some string , let's examine it using x/s 0x402038
-```bash
+```gdb
 gef➤  x/s 0x402038
 0x402038:       "/bin/sh"
 ```
@@ -167,7 +167,7 @@ it's /bin/sh , it's clear now , the win function spawn a shell with system("/bin
 So we need to input 72 bytes and then the win function 
 But before starting to write our exploit we need some a gadget  which are instructions that end with ret.
 in this case we will only use ret to aligne our stack . We will use a tool named ropper it will give us all the gadgets in this binary . we will type ropper --f main 
-```bash
+```gdb
 ┌──(kali㉿kali)-[~/Desktop/ramadhan-ctf/1-ret2win/ret2win_handout]
 └─$ ropper --f  main
 [INFO] Load gadgets for section: LOAD
