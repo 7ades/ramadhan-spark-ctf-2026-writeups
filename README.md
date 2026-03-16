@@ -37,7 +37,7 @@ i executed the binary and typed a lot of bytes , as you can see i got a segmenta
 ## step 3 - debugging the binary 
 
 
-```bash
+```gdb
 ┌──(kali㉿kali)-[~/Desktop/ramadhan-ctf/1-ret2win/ret2win_handout]
 └─$ gdb -q main
 
