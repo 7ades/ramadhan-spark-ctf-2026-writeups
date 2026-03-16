@@ -18,6 +18,7 @@ main: ELF 64-bit LSB executable, x86-64, version 1 (SYSV), dynamically linked, i
     PIE:        No PIE (0x400000)
     Stripped:   No
 ```
+The binary it 64-bit , it has no canary and it's not position independant which is great , we can't execute shell code in the stack and it's full relro so we can't write anywhere in the binay . Also it's not stripped that means it still contains symbol tables and debugging information . 
 ## step 2 - running the binary 
 
 
