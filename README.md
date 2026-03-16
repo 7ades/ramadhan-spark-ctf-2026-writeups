@@ -132,9 +132,12 @@ it's reading a 0x40 size buffer (64 bytes) and storing it in a 0xc8 space (200 b
    0x0000000000401292 <+45>:    call   0x401060 <read@plt>
 ```
 now we know that stack layout is somthing like this 
+```bash
 [ buffer ] : 64 bytes
 [ rbp ] : 8 bytes 
-[ rip ]  : 8 bytes 
+[ rip ]  : 8 bytes
+
+```
 So we need 72 bytes (64+8) to reach the rip
 
 With that being sad , the win function looks interesting . Let's disassemble it using disass win 
