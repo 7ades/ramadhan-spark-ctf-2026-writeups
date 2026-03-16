@@ -165,7 +165,7 @@ As we can see it's calling system and passing to it some string , let's examine 
 gef➤  x/s 0x402038
 0x402038:       "/bin/sh"
 ```
-it's /bin/sh , it's clear now , the win function spawn a shell with system("/bin/sh") so our goal here is to reach it .
+it's clear now , the win function spawns a shell with system("/bin/sh") so our goal here is to reach it .
 
 So we need to input 72 bytes and then the win function 
 But before starting to write our exploit we need some a gadget  which are instructions that end with ret.
