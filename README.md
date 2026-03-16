@@ -165,7 +165,11 @@ As we can see it's calling system and passing to it some string , let's examine 
 gef➤  x/s 0x402038
 0x402038:       "/bin/sh"
 ```
-it's clear now , the win function spawns a shell with system("/bin/sh") so our goal here is to reach it .
+it's clear now , the win function spawns a shell with 
+```c
+system("/bin/sh")
+```
+so our goal here is to reach it .
 
 So we need to input 72 bytes and then the win function 
 But before starting to write our exploit we need a gadget  which are instructions that end with ret.
@@ -191,8 +195,11 @@ in this case we will only use ret to aligne our stack . We will use a tool named
 as we can see the address of ret it 0x0000000000401016 
 
 Now we have :
+```python
 win = 0x4011c7
 ret = 0x401016 
+```
+
 
 ## step 4 - writing the exploit 
 Now finally i wrote my exploit , it worked locally and remotely
@@ -240,6 +247,7 @@ $
 ```bash
 Spark{sa7a_ech0rba}
 ```
+Thank you for reading , i hope it was helpful 
 
 
 
