@@ -92,7 +92,7 @@ Dump of assembler code for function main:
    0x000000000040123d <+66>:    mov    rdi,rax
    0x0000000000401240 <+69>:    call   0x401030 <puts@plt>
    0x0000000000401245 <+74>:    mov    eax,0x0
-   0x000000000040124a <+79>:    call   0x401265 <vuln>
+   0x000000000040124a <+79>:    call   0x401265 <vuln>        <------
    0x000000000040124f <+84>:    lea    rax,[rip+0xf0c]        # 0x402162
    0x0000000000401256 <+91>:    mov    rdi,rax
    0x0000000000401259 <+94>:    call   0x401030 <puts@plt>
@@ -112,8 +112,8 @@ Dump of assembler code for function vuln:
    0x0000000000401274 <+15>:    mov    rdi,rax
    0x0000000000401277 <+18>:    mov    eax,0x0
    0x000000000040127c <+23>:    call   0x401050 <printf@plt>
-   0x0000000000401281 <+28>:    lea    rax,[rbp-0x40]
-   0x0000000000401285 <+32>:    mov    edx,0xc8
+   0x0000000000401281 <+28>:    lea    rax,[rbp-0x40]  
+   0x0000000000401285 <+32>:    mov    edx,0xc8 
    0x000000000040128a <+37>:    mov    rsi,rax
    0x000000000040128d <+40>:    mov    edi,0x0
    0x0000000000401292 <+45>:    call   0x401060 <read@plt>
@@ -152,9 +152,9 @@ Dump of assembler code for function win:
    0x00000000004011da <+19>:    lea    rax,[rip+0xe2f]        # 0x402010
    0x00000000004011e1 <+26>:    mov    rdi,rax
    0x00000000004011e4 <+29>:    call   0x401030 <puts@plt>
-   0x00000000004011e9 <+34>:    lea    rax,[rip+0xe48]        # 0x402038
+   0x00000000004011e9 <+34>:    lea    rax,[rip+0xe48]        # 0x402038  <------
    0x00000000004011f0 <+41>:    mov    rdi,rax
-   0x00000000004011f3 <+44>:    call   0x401040 <system@plt>
+   0x00000000004011f3 <+44>:    call   0x401040 <system@plt> <-----
    0x00000000004011f8 <+49>:    nop
    0x00000000004011f9 <+50>:    pop    rbp
    0x00000000004011fa <+51>:    ret
@@ -183,7 +183,7 @@ in this case we will only use ret to aligne our stack . We will use a tool named
 0x00000000004011c4: nop; pop rbp; ret; 
 0x0000000000401297: nop; leave; ret; 
 0x00000000004010df: nop; ret; 
-0x0000000000401016: ret;
+0x0000000000401016: ret;  <------
 
 99 gadgets found
 ```
