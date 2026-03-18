@@ -1,5 +1,5 @@
 # ⚡ Ramadhan Spark CTF 2026 ⚡
-## 🏴‍☠️ Pwn Writeups by Mohamed Amine
+## 🏴‍☠️ Pwn Writeups by 7ades
 
 <p align="center">
   <img src="https://img.shields.io/badge/CTF-Ramadhan%202026-black?style=for-the-badge">
