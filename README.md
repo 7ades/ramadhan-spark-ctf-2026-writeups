@@ -1,53 +1,39 @@
-# 🌙 Ramadhan Spark CTF 2026 Writeups
+# ⚡ Ramadhan Spark CTF 2026 ⚡
+## 🏴‍☠️ Pwn Writeups by Mohamed Amine
 
-Welcome to this repository!  
-It contains my binary exploitation (pwn) writeups for challenges from **Ramadhan CTF 2026**, organized by *Engineers' Spark*.
-
----
-
-## 📂 Challenges Covered
-
-- 🔹 **ret2win**
-- 🔹 **mini_suhour**
-- 🔹 **order**
-- 🔹 **let_him_cook**
+<p align="center">
+  <img src="https://img.shields.io/badge/CTF-Ramadhan%202026-black?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Category-Pwn-red?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Focus-Binary%20Exploitation-blue?style=for-the-badge">
+</p>
 
 ---
 
-## 🧠 Topics
+## 🌙 About
 
-These writeups mainly cover:
+This repository contains my **binary exploitation writeups** for challenges from **Ramadhan Spark CTF 2026**, organized by *Engineers' Spark*.
 
-- Buffer Overflow
-- Return-Oriented Programming (ROP)
-- ret2plt / ret2win techniques
-- Stack analysis
-- Binary protections bypass (NX, PIE, Canary, etc.)
+Expect clean explanations, exploit development, and practical techniques used in real CTF scenarios.
 
 ---
 
-## 🛠️ Tools Used
+## 📂 Challenges
 
-- `pwntools`
-- `gdb` / `gef`
-- `objdump`
-- `checksec`
-
----
-
-## 📌 Notes
-
-Each challenge folder contains:
-- 📝 A detailed explanation
-- ⚙️ Exploit script
-- 🔍 Analysis of the binary
+| Challenge        | Difficulty | Techniques |
+|-----------------|----------|------------|
+| ret2win         | 🟢 Easy   | BOF, ret2win |
+| mini_suhour     | 🟡 Medium | Leak, ROP |
+| order           | 🟡 Medium | Format String |
+| let_him_cook    | 🔴 Hard   | Advanced exploitation |
 
 ---
 
-## 🚀 Author
+## 🧠 Techniques Covered
 
-**7ades**
-
----
-
-> رمضان مبارك 🌙 and happy hacking!
+```bash
+✔ Buffer Overflow
+✔ Return-Oriented Programming (ROP)
+✔ ret2plt / ret2win
+✔ Format String Exploitation
+✔ Stack Layout Analysis
+✔ Bypassing Protections (NX, PIE, Canary, RELRO)
